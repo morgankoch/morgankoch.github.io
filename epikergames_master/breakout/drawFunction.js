@@ -8,7 +8,7 @@ function draw() {
   x = x + dx;
   y = y + dy;
   ball(x, y);
-  board.html(score);
+  text(score, 10, 25, 30);
   for (let i = 0; i < blocks.length; i++) {
     blocks[i].draw();
     if (blocks[i].checkIfCollided()) {

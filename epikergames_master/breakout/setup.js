@@ -17,8 +17,6 @@ function setup() {
   canvas = createCanvas(500, 400);
   canvas.parent("canvas")
   x = random(50, 450);
-  board = createElement('h2', score)
-  board.position(10, -10)
   block();
 }
 class b {
