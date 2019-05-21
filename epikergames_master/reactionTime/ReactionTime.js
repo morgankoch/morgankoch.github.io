@@ -1,7 +1,6 @@
 var mouseAccuracy;
 var reactionTime;
-var textColor1 = "white";
-var textColor2 = "white";
+var textColor = "white";
 var textColorRestart = "white";
 var startScreen = true;
 var end;
@@ -51,9 +50,6 @@ function draw() {
       end = true;
     }
   }
-  if(startScreen == false && reactionTime == true){
-    background(220);
-  }
   if(startScreen == true){
     background(255, 0, 0);
     fill(textColor1);
@@ -63,16 +59,10 @@ function draw() {
     textSize(20);
     textAlign(CENTER, CENTER);
     if(mouseX >= 102 && mouseX <= 293 && mouseY >= 190 && mouseY <= 209){
-      textColor1 = "grey";
-      textColor2 = "white";
-    }
-    else if(mouseX >= 111 && mouseX <= 286 && mouseY >= 210 && mouseY <= 232){
-      textColor2 = "grey";
-      textColor1 = "white";
+      textColor = "grey";
     }
     else {
-      textColor1 = "white";
-      textColor2 = "white";
+      textColor = "white";
     }
   }
   if(end == true && mouseAccuracy == false){
@@ -100,11 +90,6 @@ function mouseClicked(){
     startScreen = false;
     mouseAccuracy = true;
     reactionTime = false;
-  }
-  if(mouseX >= 111 && mouseX <= 286 && mouseY >= 210 && mouseY <= 232 && reactionTime == false && mouseAccuracy == false && end == false){
-    startScreen = false;
-    reactionTime = true;
-    mouseAccuracy = false;
   }
   if(mouseX >= 165 && mouseX <= 234 && mouseY >= 209 && mouseY <= 228 && reactionTime == false && mouseAccuracy == false){
     end = false;
