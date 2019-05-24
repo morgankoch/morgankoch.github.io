@@ -1,5 +1,6 @@
 *  {
-  font-family: "Comic Sans MS"
+  font-family: "Comic Sans MS";
+  font-size: 20px;
 }
 
 ul {
@@ -14,4 +15,17 @@ ul {
 li {
   display: inline;
   margin: 0px 3px
+}
+
+a {
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 6px 18px 5px 18px;
+}
+
+a:hover, a.on {
+  color: blue;
+  background-color: #ffffff;
+
 }
