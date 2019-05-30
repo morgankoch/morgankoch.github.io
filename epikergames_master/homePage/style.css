@@ -29,3 +29,7 @@ a:hover, a.on {
   background-color: #ffffff;
 
 }
+
+canvas.kevin {
+  cursor: none;
+}
