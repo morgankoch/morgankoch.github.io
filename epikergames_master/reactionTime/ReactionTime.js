@@ -21,5 +21,7 @@ class Square{
 function setup() {
   scrDsp = createElement('h2', "Score: ")
   squr = new Square(256, 156);
+  console.log("Above");
   createCanvas(400, 400);
+  console.log("below");
 }
