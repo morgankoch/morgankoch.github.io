@@ -1,9 +1,9 @@
 function startscreen() {
-  canvas = createCanvas(400, 400);
+  background("white")
+  canvas = createCanvas(400, 350);
   canvas.parent("canvas")
   let sx = 100
   let sy = 100
-  background(40)
   fill(0)
   quad(sx - 20,sy - 50,sx + 220,sy - 50,sx + 220,sy + 150,sx - 20,sy + 150)
   triangle(sx - 20,sy + 150,sx + 100,sy + 200,sx + 220,sy + 150)
