@@ -7,6 +7,7 @@ var reactionTime;
 var textColor1 = "white";
 var textColor2 = "white";
 var textColorRestart = "white";
+var textColorHome = "white";
 var startScreen = true;
 var end;
 var squr;
@@ -56,12 +57,20 @@ function draw() {
     text("You scored " + score + " in 15 seconds!", 0, 0, 400, 400);
     fill(textColorRestart);
     text("Restart", 0, 20, 400, 400);
+    fill(textColorHome)
+    text("Home", 330, 21)
     textAlign(CENTER, CENTER);
     if(mouseX >= 165 && mouseX <= 234 && mouseY >= 209 && mouseY <= 228){
       textColorRestart = "grey";
+      textColorHome = "white";
     }
+    else if (mouseX >= 301 && mouseX <= 363 && mouseY >= 14 && mouseY <= 30) {
+      textColorRestart = "white"
+      textColorHome = "grey"
+      }
     else {
       textColorRestart = "white"
+      textColorHome = "white"
       }
     }
   }
@@ -91,5 +100,10 @@ function mouseClicked(){
     reactionTime = false;
     startScreen = false;
     timePassed = millis()
+  }
+  //Home Button
+  if(mouseX >= 301 && mouseX <= 363 && mouseY >= 14 && mouseY <= 30 && reactionTime == false){
+    startScreen = true;
+    end = false;
   }
 }
