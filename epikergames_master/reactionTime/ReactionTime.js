@@ -20,7 +20,7 @@ class Square{
 
 function setup() {
   scrDsp = createElement('h2', "Score: ")
-  title.style.textAlign = "center";
+  scrDsp.style.textAlign = "center";
   squr = new Square(256, 156);
   console.log("Above");
   canvas = createCanvas(400, 400);
