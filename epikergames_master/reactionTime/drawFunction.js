@@ -2,6 +2,8 @@ var timePassed = 0;
 var millisecond;
 var sec;
 var AccIsClicked = false;
+var homeIsClicked = false;
+var restartIsClicked = false;
 var mouseAccuracy;
 var reactionTime;
 var textColor1 = "white";
@@ -24,7 +26,6 @@ function draw() {
     sec = floor(millisecond/1000);
     if(sec >= 15){
       end = true;
-
     }
   }
   if(startScreen == false && reactionTime == true){
@@ -52,6 +53,8 @@ function draw() {
     }
   }
   if(end == true){
+    homeIsClicked = false;
+    restartIsClicked = false;
     background(255, 0, 0);
     fill(255)
     text("You scored " + score + " in 15 seconds!", 0, 0, 400, 400);
@@ -81,11 +84,13 @@ function mouseClicked(){
     score += 10;
   }
   //Mouse Accuracy
-  if(mouseX >= 102 && mouseX <= 293 && mouseY >= 190&& mouseY <= 209 && AccIsClicked == false){
+  if(mouseX >= 102 && mouseX <= 293 && mouseY >= 190 && mouseY <= 209 && AccIsClicked == false){
     startScreen = false;
     mouseAccuracy = true;
     reactionTime = false;
     AccIsClicked = true;
+    homeIsClicked = true;
+    restartIsClicked = true;
   }
   //Reaction Time
   if(mouseX >= 111 && mouseX <= 286 && mouseY >= 210 && mouseY <= 232 && mouseAccuracy == false){
@@ -94,16 +99,24 @@ function mouseClicked(){
     mouseAccuracy = false;
   }
   //Restart Button
-  if(mouseX >= 165 && mouseX <= 234 && mouseY >= 209 && mouseY <= 228 && reactionTime == false){
+  if(mouseX >= 165 && mouseX <= 234 && mouseY >= 209 && mouseY <= 228 && reactionTime == false && restartIsClicked == false){
     end = false;
+    homeIsClicked = true;
     mouseAccuracy = true;
     reactionTime = false;
     startScreen = false;
+    restartIsClicked = true;
     timePassed = millis()
+    score = 0;
   }
   //Home Button
-  if(mouseX >= 301 && mouseX <= 363 && mouseY >= 14 && mouseY <= 30 && reactionTime == false){
+  if(mouseX >= 301 && mouseX <= 363 && mouseY >= 14 && mouseY <= 30 && reactionTime == false && homeIsClicked == false){
     startScreen = true;
     end = false;
+    homeIsClicked =  true;
+    AccIsClicked = false;
+    end = false;
+    timePassed = millis();
+    score = 0;
   }
 }
