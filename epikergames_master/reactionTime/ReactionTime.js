@@ -22,8 +22,6 @@ function setup() {
   scrDsp = createElement('h2', "Score: ")
   scrDsp.style.textAlign = "center";
   squr = new Square(256, 156);
-  console.log("Above");
   canvas = createCanvas(400, 400);
   canvas.parent("canvas")
-  console.log("below");
 }
